@@ -1,3 +1,7 @@
 #!/bin/bash
 
-checkRoutine.sh ls -lrt --block-size=M
+find . -name 'channel???' | while IFS= read i; do
+
+echo $i' '$(ls $i | wc -l)
+
+done | grep -w -E '2|3'
